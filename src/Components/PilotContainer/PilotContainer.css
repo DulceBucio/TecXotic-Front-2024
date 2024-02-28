@@ -1,0 +1,24 @@
+.PilotCards-container{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+#Main1{
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+}
+
+#Main2{
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+}
+
