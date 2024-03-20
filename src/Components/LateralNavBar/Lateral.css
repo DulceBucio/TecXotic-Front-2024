@@ -1,0 +1,52 @@
+.lateral-navbar {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  width: 8%;
+  height: 100%;
+  background-color: #19525B;
+  z-index: 999;
+}
+
+.buttons-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+}
+
+.button {
+    width: 55px;
+    height: 55px;
+    border-radius: 9px;
+    cursor: pointer;
+    background-color: #288F9D;
+    outline: none;
+    margin-bottom: 20px;
+    border: none;
+}
+
+.button svg {
+    width: 32px;
+    height: 32px;
+    color: #fff;
+}
+
+.button:hover {
+    box-shadow: 0 0 7px #68D2E1;
+}
+
+.button.clicked {
+    border: 2px solid #17474E;
+}
+
+.button.clicked:hover {
+    background-color: #288F9D;
+    box-shadow: none;
+}
+
+.button:active {
+    border: 2px solid #17474E;
+}
+
