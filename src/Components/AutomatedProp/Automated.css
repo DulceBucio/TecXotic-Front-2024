@@ -1,0 +1,19 @@
+.AutomatedContainer{
+    background-color:#19525B;
+    color: black;
+    position:fixed;
+    display: flex;
+}
+
+#AutomatedButton{
+    background-color:#68D2E1;
+    color:black;
+    font-size: medium;
+    position: fixed;
+    display: flex;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    border-radius: 10px;
+}
