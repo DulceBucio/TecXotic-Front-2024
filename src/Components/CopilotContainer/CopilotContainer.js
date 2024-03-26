@@ -38,6 +38,9 @@ export default function CopilotContainer(){
                                 <SVG name="camera" style={{}} />
                             </button>
                             <Webcam ref={webcamRef2} height={340} width={600} screenshotFormat="image/png" />
+                            <button className="render-button">
+                                <span className="button-text">Render 3D</span>
+                            </button>
                         </div>
                     </div>
                 </div>
