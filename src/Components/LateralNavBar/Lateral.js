@@ -6,12 +6,13 @@ import Automated from "../AutomatedProp/Automated"
 
 export default function LateralNavBar(props){
     const arrayOfButtons = [
-        {name: "Graph", icon: "chart-column"},
+        {name: "Graph", icon: "chart-column", },
         {name: "Automated", icon: "robot"}
     ]
 
     const [selectedButton, setSelectedButton] = useState(null);
     const [clickedButton, setClickedButton] = useState(null);
+    const [selectedComponent, setSelectedComponent] = useState(null);
 
     const handleSelectedComponent = useCallback((button) => {
         props.handleSelectedComponent(button.component);
@@ -27,9 +28,10 @@ export default function LateralNavBar(props){
         <div className="lateral-navbar">
             <div className="buttons-container">
                 {arrayOfButtons.map((button, index) => (
-                    <button className={`button ${selectedButton === button.name ? 'active' : ''} ${clickedButton === button.name ? 'clicked' : ''}`} 
+                    <button className={`button ${selectedButton === button.name ? 'active' : ''} 
+                    ${clickedButton === button.name ? 'clicked' : ''}`} 
                     key={index} 
-                    onClick={() => {
+                    onClick={(evt) => {
                         evt.preventDefault();
                         handleSelectedComponent({component: button.name === 'Graph' ? <Graph /> : <Automated />, name: button.name});
                         handleButtonClick(button.name, evt);
@@ -39,6 +41,7 @@ export default function LateralNavBar(props){
                     </button>
                 ))}
             </div>
+            <div className="component-container">{selectedComponent}</div>
         </div>
     )
 }

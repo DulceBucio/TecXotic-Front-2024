@@ -1,0 +1,17 @@
+.GraphContainer{
+    background-color:#288F9D;
+    color: black;
+    position:fixed;
+    display: flex;
+    text-align: justify;
+}
+
+#GraphButton{
+    background-color:#68D2E1;
+    color:black;
+    position: fixed;
+    display: flex;
+    border-radius: 10px;
+    padding-left: 10%;
+    padding-right: 10%;
+}
