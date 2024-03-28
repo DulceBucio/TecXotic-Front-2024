@@ -68,6 +68,8 @@
     background-color: #fff;
     border: 3px solid #17474E;
     outline: none;
+    z-index: 999;
+    transition: transform 0.1s ease, background-color 0.2s ease;
 }
 
 .camera-text { 
@@ -83,28 +85,43 @@
     width: 24px;
     height: 24px;
     color: #000;
+    pointer-events: none;
+}
+
+.camera-button:hover {
+    background-color: #f0f0f0;
+    box-shadow: 0 0 8px #17474E;
+}
+
+.camera-button:active{
+    transform: scale(0.9);
+    background-color: #e4e4e4;
 }
 
 .render-button {
     position: absolute;
     bottom: 10px; 
-    right: 10px; 
-    width: 200px;
-    height: 40px;
-    transform: translateX(-100%);
+    width: 140px;
+    height: 30px;
     border-radius: 5%;
     cursor: pointer;
     background-color: #288F9D;
     border: none;
     outline: none;
+    transition: transform 0.1s ease, background-color 0.2s ease;
 }
 
 .render-button:hover {
     box-shadow: 0 0 10px #68D2E1;
 }
 
-.button-text {
-    font-size: 20px;
+.render-button:active {
+    transform: scale(0.95);
+    background-color: #1A6B77;
+}
+
+.renderbutton-text {
+    font-size: 18px;
     color: #000;
     margin-left: 5px;
 }

@@ -1,17 +1,44 @@
 .GraphContainer{
-    background-color:#288F9D;
-    color: black;
-    position:fixed;
     display: flex;
+    flex-direction: column;
+    padding: 20px;
+    justify-content: space-around;
+    align-items: center;
+    height: 75%;
+    width: 40%;
+    background-color:#288F9D;
+    position: relative;
     text-align: justify;
+    border-radius: 10px;
 }
 
-#GraphButton{
+.file-input {
+    display: none;
+}
+
+.file-button-label{
     background-color:#68D2E1;
-    color:black;
-    position: fixed;
+    
     display: flex;
     border-radius: 10px;
-    padding-left: 10%;
-    padding-right: 10%;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.chart-image-container {
+    width: 80%;
+    text-align: center;
+}
+
+.chart-image {
+    width: 80%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.button-text {
+    font-size: 20px;
+    color: #000;
+    margin-left: 5px;
 }
