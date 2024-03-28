@@ -1,16 +1,34 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Graph.css";
 
+
 export default function Graph() {
-    const handleButtonClick = () => {
-        alert("¡Has presionado el botón Generate graph!");
-    };
+    const [imageSrc, setImageSrc] = useState(null);
+
+    const handleFileUpload = async (evt) => {
+        const file = evt.target.files[0];
+        if (!file) return;
+    }
+
 
     return (
         <div className="GraphContainer">
-            <button id="GraphButton" onClick={handleButtonClick}>Generate graph</button>
-            <img src="Graph.jpg" alt="Grafica" />
-            Hola mundo
+            <label className="file-button-label" htmlFor="file-input">
+                <span className="button-text">Upload File</span>
+                <input
+                    type="file"
+                    id="file-input"
+                    className="file-input"
+                    onChange={handleFileUpload}
+                    style={{ display: "none" }}
+                />
+            </label>
+            {imageSrc && (
+                <div className="chart-image-container">className
+                    <img id="chart-image" className="chart-image" src={imageSrc} alt="chart" />
+                </div>
+            )}
         </div>
-    );
+    )
 }
+
