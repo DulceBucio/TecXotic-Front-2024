@@ -24,13 +24,13 @@ export default function Graph() {
           formData.append("file", file);
     
           try {
-            const response = await fetch("http://127.0.0.1:5000/upload", {
+            const response = await fetch("http://192.168.5.1:8080/graph/upload", {
               method: "POST",
               body: formData,
             });
     
             if (response.ok) {
-              setImageSrc("http://127.0.0.1:5000/image/temp_plot.png");
+              setImageSrc("http://192.168.5.1:8080/graph/image/temp_plot.png");
             }
           } catch (error) {
             setMessage("Fatal error :(");
