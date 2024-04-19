@@ -30,14 +30,29 @@ export default function CopilotContainer(){
 
     const [sampleA, setSampleA] = useState(null);
 
-    const takePicture = (webcamRef) => {
-        const imageSrc = webcamRef.current.getScreenshot();
-        var file = dataURLtoFile(imageSrc, 'Comparator.png');
-        setSampleA(URL.createObjectURL(file));
-        var a = document.createElement("a"); //Create <a>
-        a.href = imageSrc; //Image Base64 Goes here
-        a.download = "Model.png"; //File name Here
-        a.click();
+    // const takePicture = (webcamRef) => {
+    //     const imageSrc = webcamRef.current.getScreenshot();
+    //     var file = dataURLtoFile(imageSrc, 'Comparator.png');
+    //     setSampleA(URL.createObjectURL(file));
+    //     var a = document.createElement("a"); //Create <a>
+    //     a.href = imageSrc; //Image Base64 Goes here
+    //     a.download = "Model.png"; //File name Here
+    //     a.click();
+    // }
+
+    const takePicture = () => {
+        fetch('http://192.168.5.1:8080/screenshot/default') // 'default' can be any placeholder
+            .then(response => response.blob())
+            .then(blob => {
+                const imageSrc = URL.createObjectURL(blob);
+                setSampleA(imageSrc);
+                var a = document.createElement("a");
+                a.href = imageSrc;
+                a.download = "Model.png";
+                a.click();
+            })
+            .catch(error => console.error('Error taking picture:', error));
+            console.log("Picture taken");
     }
 
     return(
@@ -51,9 +66,10 @@ export default function CopilotContainer(){
                     <div className="top-right-box">
                         <div className="CameraContainer">
                             <div className="camera-text">Camera 1</div>
-                            <button className="camera-button" onClick={() => takePicture(webcamRef1)} >
+                            <button className="camera-button" onClick={takePicture}>
                                 <SVG name="camera" style={{}} />
                             </button>
+
                             {/*cuando ocupen hacer pruebas sin conectarse al servidor utilicen la webcam*/}
                             <CameraProp
                                 image={arrayOfCameras[0].image}
@@ -66,7 +82,7 @@ export default function CopilotContainer(){
                     <div className="bottom-right-box">
                         <div className="CameraContainer">
                             <div className="camera-text">Camera 2</div>
-                            <button className="camera-button" onClick={() => takePicture(webcamRef2)}>
+                            <button className="camera-button" onClick={takePicture}>
                                 <SVG name="camera" style={{}} />
                             </button>
                             {/* <Webcam ref={webcamRef2} height={340} width={600} screenshotFormat="image/png" /> */}
