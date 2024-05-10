@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import { Link } from "react-router-dom"
 import Lateral from "../LateralNavBar/Lateral"
 import Webcam from "react-webcam"
 import SVG from "../SVGProp/SVG"
@@ -57,6 +58,9 @@ export default function CopilotContainer(){
 
     return(
         <div className="copilot-container">
+            <nav className="top-right-nav">
+                <Link to="/" className="pilot-link">Pilot</Link>
+            </nav>
             <Lateral handleSelectedComponent={handleSelectedComponent} />
             <div className="camera-container">
                 <div className="left-box">
@@ -76,7 +80,7 @@ export default function CopilotContainer(){
                                 idImg={arrayOfCameras[0].idImg}
                                 styles={arrayOfCameras[0].styles}
                             />
-                            {/* <Webcam ref={webcamRef1} height={340} width={600} screenshotFormat="image/png" /> */}
+                            {/* <Webcam ref={webcamRef1} height={300} width={580} screenshotFormat="image/png" /> */}
                         </div>
                     </div>
                     <div className="bottom-right-box">
@@ -85,7 +89,7 @@ export default function CopilotContainer(){
                             <button className="camera-button" onClick={takePicture}>
                                 <SVG name="camera" style={{}} />
                             </button>
-                            {/* <Webcam ref={webcamRef2} height={340} width={600} screenshotFormat="image/png" /> */}
+                            {/* <Webcam ref={webcamRef2} height={300} width={580} screenshotFormat="image/png" /> */}
                             <CameraProp
                                 image={arrayOfCameras[0].image}
                                 idImg={arrayOfCameras[0].idImg}

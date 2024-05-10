@@ -69,3 +69,15 @@ nav button:hover{
   cursor: pointer;
 }
 
+.link-styling {
+  background-color: var(--aqua_tecxotic);
+  border: none;
+  color: #fff;
+  font-size: 1.1rem;
+  cursor: pointer;
+  outline: none;
+  border-radius: 5px;
+  text-decoration: none;
+  margin-right: 20px;
+  padding: 5px 6px;
+}

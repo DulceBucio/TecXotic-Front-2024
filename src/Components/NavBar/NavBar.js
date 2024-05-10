@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import "./NavBar.css";
 import logo from "../../Images/logo.ico";
 import SliderComponent from '../SliderComponent/SliderComponent';
@@ -41,6 +42,7 @@ const Navbar = ({connections, changeCamera, getSliderValue}) => {
             <SliderComponent onChange={updateSpeed} getSliderValue={getSliderValue}/>
 
         </div>
+        <Link to="/copilot" className="link-styling">Copilot</Link>
         <button className="ChangeCamera" onClick={changeCamera}><SVG name='camera-retro'color="white"/></button>
     </nav>
   );
