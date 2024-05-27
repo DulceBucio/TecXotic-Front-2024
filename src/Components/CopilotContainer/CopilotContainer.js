@@ -6,6 +6,7 @@ import SVG from "../SVGProp/SVG"
 import "./CopilotContainer.css"
 import CameraProp from "../CameraProp/CameraProp"
 import { arrayOfCameras } from "../../Constants"
+import { render } from "@testing-library/react"
 
 function dataURLtoFile(dataurl, filename) {
     var arr = dataurl.split(','),
@@ -56,6 +57,16 @@ export default function CopilotContainer(){
             console.log("Picture taken");
     }
 
+    const renderModel = () =>{
+        fetch('http://10.49.183.192:8080/photogammetry') //Photogammetry main.py local host rooute
+        .then(response => response.blob())
+        then(blob => {
+            alert("Model 3D")
+        })
+        .catch(error => console.error("Error en conexión", error));
+        console.log("Render model");
+    }
+
     return(
         <div className="copilot-container">
             <nav className="top-right-nav">
@@ -95,7 +106,7 @@ export default function CopilotContainer(){
                                 idImg={arrayOfCameras[0].idImg}
                                 styles={arrayOfCameras[0].styles}
                             />
-                            <button className="render-button">
+                            <button className="render-button" onClick={renderModel}>
                                 <span className="renderbutton-text">Render 3D</span>
                             </button>
                         </div>
