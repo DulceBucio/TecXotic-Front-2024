@@ -56,16 +56,31 @@ export default function CopilotContainer(){
             .catch(error => console.error('Error taking picture:', error));
             console.log("Picture taken");
     }
-
-    const renderModel = () =>{
-        fetch('http://10.49.183.192:8080/photogammetry') //Photogammetry main.py local host rooute
-        .then(response => response.blob())
-        then(blob => {
-            alert("Model 3D")
+    const renderModel = () => {
+        fetch('http://10.49.181.149:8080/photogammetry/upload', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                "image_folder": "C:/Users/yasmi/Documents/TecXotic-Back-2024/routes/image_folder",
+                "output_folder": "C:/Users/yasmi/Documents/TecXotic-Back-2024/path_to_output"
+        })
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            alert("Model 3D created successfully");
+            console.log("Response data:", data);
         })
         .catch(error => console.error("Error en conexión", error));
         console.log("Render model");
     }
+    
 
     return(
         <div className="copilot-container">
