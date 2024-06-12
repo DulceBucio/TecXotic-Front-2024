@@ -21,21 +21,12 @@ const Navbar = ({connections, changeCamera, getSliderValue}) => {
     changeCamera: PropTypes.func,
     connections: PropTypes.arrayOf(PropTypes.bool)
   }
-  const arrayOfSVGNames= ["wifi", "gamepad", "flag", "gear"];
+  
 
   return (
     <nav>
         <div className="nav-links">
             <ol className='Indicators-List'>
-                {connections.map((connection, index) => {
-                    return <li className='Indicator-Item' key={index}>
-                        <SVG 
-                            name={`${arrayOfSVGNames[index]}`} 
-                            color={connection ? "#86e642" : "#bf5646"}
-                        />
-                    </li>
-                })}
-                
                 <li><h2 className="SpeedContainer">Speed: {speed}</h2></li>
             </ol>
             <SVG name='gauge-simple'color="white"/>

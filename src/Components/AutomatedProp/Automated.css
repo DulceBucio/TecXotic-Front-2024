@@ -1,13 +1,13 @@
 .AutomatedContainer{
     background-color:#19525B;
     color: black;
-    position:fixed;
+    position: fixed;
     display: flex;
 }
 
 #AutomatedButton{
     background-color:#68D2E1;
-    color:black;
+    border: none;
     font-size: medium;
     position: fixed;
     display: flex;
@@ -16,4 +16,9 @@
     padding-bottom: 10px;
     padding-top: 10px;
     border-radius: 10px;
+    cursor: pointer;
+}
+
+#AutomatedButton:hover {
+    box-shadow: 0 0 7px #68D2E1;
 }
