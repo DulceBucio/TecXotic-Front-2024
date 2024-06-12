@@ -1,0 +1,28 @@
+.BuoyancyContainer {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    justify-content: flex-start;
+    align-items: center;
+    height: 75%;
+    width: 75%;
+    background-color: #288f9d;
+    position: relative;
+    text-align: justify;
+    border-radius: 10px;
+}
+
+.Title {
+    font-size: 5vh;
+    color: #19525B;
+    text-align: center;
+}
+
+.DataContainer {
+    font-size: 1.5vh;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15%;
+}

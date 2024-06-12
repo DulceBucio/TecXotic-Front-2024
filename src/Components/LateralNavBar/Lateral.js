@@ -3,10 +3,12 @@ import "./Lateral.css"
 import SVG from "../SVGProp/SVG"
 import Graph from "../GraphProp/Graph"
 import Automated from "../AutomatedProp/Automated"
+import Buoyancy from "../BuoyancyProp/Buoyancy"
 
 export default function LateralNavBar(props){
     const arrayOfButtons = [
         {name: "Graph", icon: "chart-column", },
+        {name: "Buoyancy", icon: "droplet"},
         {name: "Automated", icon: "robot"}
     ]
 
@@ -33,7 +35,7 @@ export default function LateralNavBar(props){
                     key={index} 
                     onClick={(evt) => {
                         evt.preventDefault();
-                        handleSelectedComponent({component: button.name === 'Graph' ? <Graph /> : <Automated />, name: button.name});
+                        handleSelectedComponent({component: button.name === 'Graph' ? <Graph /> : button.name === 'Buoyancy' ? <Buoyancy /> : <Automated />, name: button.name});
                         handleButtonClick(button.name, evt);
                     }}
                     >
